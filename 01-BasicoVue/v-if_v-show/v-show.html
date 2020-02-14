@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hola Mundo</title>
+</head>
+
+<body>
+  <div id="app">
+    <div v-show="mostrar">
+      <!-- Esta funcion es muy costosa para el navegador
+      porque tiene que buscar el elemento y eliminarlo.
+      Si se usa constantemente no es recomendado. -->
+      <h1>Este es un Título</h1>
+      <h2>Este es un subtítulo</h2>
+      <a v-bind:href="url" target="_blank">
+       Ir a {{ pagina }}
+      </a>
+    </div>
+    <div v-show="!mostrar">Este contenido esta oculto</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data: {
+        mostrar: true,
+        url: 'https://google.com',
+        pagina: 'Google'
+      }
+    })
+  </script>
+</body>
+
+</html>
