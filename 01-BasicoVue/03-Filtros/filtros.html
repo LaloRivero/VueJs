@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VueJs</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{titulo | upperCase}}</h1>
+    <h2>{{subtitulo | lowerCase}}</h2>
+    <h2>{{capitalice | capitalLetter}}</h2>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data: {
+        titulo: 'Esto es un título',
+        subtitulo: 'Esto es un subtitulo',
+        capitalice: 'reto letra capital'
+      },
+      filters: {
+        upperCase: function(str) {
+          return str.toUpperCase();
+        },
+        lowerCase: function(str) {
+          return str.toLowerCase();
+        },
+        capitalLetter: function(str) {
+          return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
