@@ -3,7 +3,7 @@
     img(src='./assets/logo.png')
     h1 e-Music
     ul
-      li(v-for="artist in artists") {{ artist.name }}
+      li(v-for='artist in artists') {{ artist.name }}
 </template>
 
 <script>
@@ -11,12 +11,12 @@ export default {
   name: "app",
   data() {
     return {
-      artist: [
-        {name: 'David Bowie'},
-        {name: 'Daft Punk'},
-        {name: 'Red Hot Chili Pepers'},
-        {name: 'AC/DC'},
-        {name: 'Queen'},
+      artists: [
+        { name: 'David Bowie' },
+        { name: 'Daft Punk' },
+        { name: 'Red Hot Chili Pepers' },
+        { name: 'AC/DC' },
+        { name: 'Queen' },
       ]
     };
   }
