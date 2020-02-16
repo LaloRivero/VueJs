@@ -1,9 +1,9 @@
 .DS_Store
+src/api/config.js
 node_modules/
 dist/
 npm-debug.log
 yarn-error.log
-src/api/config.js
 
 # Editor directories and files
 .idea
