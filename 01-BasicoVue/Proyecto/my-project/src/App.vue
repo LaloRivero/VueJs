@@ -1,26 +1,29 @@
-<template lang='pug'>
+<template lang="pug">
   #app
     img(src='./assets/logo.png')
-    h1 e-Music
+    h1 PlatziMusic
     ul
-      li(v-for='artist in artists') {{ artist.name }}
+      li(v-for="artist in artists") {{ artist.name }}
 </template>
 
 <script>
+import getArtists from './api'
+
 export default {
-  name: "app",
-  data() {
+  name: 'app',
+  data () {
     return {
-      artists: [
-        { name: 'David Bowie' },
-        { name: 'Daft Punk' },
-        { name: 'Red Hot Chili Pepers' },
-        { name: 'AC/DC' },
-        { name: 'Queen' },
-      ]
-    };
+      artists: []
+    }
+  },
+  mounted: function () {
+    const self = this
+    getArtists()
+      .then(function (artists) {
+        self.artists = artists
+      })
   }
-};
+}
 </script>
 
 <style lang='stylus'>
