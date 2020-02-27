@@ -1,26 +1,9 @@
--var titulo = "Título Principal"
--var titulos = ["Título Principal", "Subtítulo 1", "Subtítulo 2", "Subtítulo 1"]
-//-var usuario = "David"
-mixin caja(imagen,titulo,contenido) 
-  .caja
-    .caja__imagen: img(src="../images/"+imagen, alt="imagen generica")
-    .caja__contenido
-      h3=titulo
-      p=contenido
+include ../components/configs.pug
 <!DOCTYPE html>
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="stylesheet", href="../css/ejercicio-pug.css")
-    title Ejercicio en Pug
+  include ../components/head.pug
   body
-    header
-      h1 PlatziGames
-      if usuario
-        a hola #{usuario}
-      else
-        a.boton Registro
+    include ../components/header.pug
     section.intro
       .intro__imagen: img(src="../images/imagen.png", alt="imagen generica")
       .intro__contenido
@@ -36,3 +19,4 @@ html(lang="en")
       +caja('imagen.png', titulos[1],'Proin totam minus dolores porro natus temporibus obcaecati dolor, omnis atque reprehenderit modi? Corporis, esse nam.') 
       +caja('imagen.png', titulos[2],'Proin totam minus dolores porro natus temporibus obcaecati dolor, omnis atque reprehenderit modi? Corporis, esse nam.') 
       +caja('imagen.png', titulos[2],'Proin totam minus dolores porro natus temporibus obcaecati dolor, omnis atque reprehenderit modi? Corporis, esse nam.') 
+  include ../components/footer.pug

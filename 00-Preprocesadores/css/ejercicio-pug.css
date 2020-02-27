@@ -115,7 +115,36 @@ header a {
 	background-color: #EEF1F7;
 	padding: 20px;
 }
+.contenido{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	height: 75vh;
+}
 
+.contenido__side{
+	display: flex;
+	flex-direction: column;
+	text-transform: uppercase;
+	font-weight: bold;
+	justify-content: center;
+	background-color: #EEF1F8;
+	padding: 35px;
+	width: 100%;
+	height: 100%;
+}
+.contenido__side ul{
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	color:#012179;
+	list-style: none;
+	padding: 0;
+}
+
+.contenido__principal{
+	padding: 50px;
+}
 footer ul {
 	margin-left: auto;
 	display: flex;
