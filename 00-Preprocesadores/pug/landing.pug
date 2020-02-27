@@ -1,0 +1,38 @@
+-var titulo = "Título Principal"
+-var titulos = ["Título Principal", "Subtítulo 1", "Subtítulo 2", "Subtítulo 1"]
+//-var usuario = "David"
+mixin caja(imagen,titulo,contenido) 
+  .caja
+    .caja__imagen: img(src="../images/"+imagen, alt="imagen generica")
+    .caja__contenido
+      h3=titulo
+      p=contenido
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="../css/ejercicio-pug.css")
+    title Ejercicio en Pug
+  body
+    header
+      h1 PlatziGames
+      if usuario
+        a hola #{usuario}
+      else
+        a.boton Registro
+    section.intro
+      .intro__imagen: img(src="../images/imagen.png", alt="imagen generica")
+      .intro__contenido
+        h2 #{titulos[0]}
+        p 
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          | Dicta numquam dolorum fugiat autem maiores aut, culpa nemo
+          | deserunt repellat tempora velit, excepturi provident cum. 
+          | Labore vel sed veniam doloribus quos
+          span Proin totam minus dolores porro natus temporibus obcaecati dolor, omnis atque reprehenderit modi? Corporis, esse nam.
+        a.boton Leer Más
+    main.contenido
+      +caja('imagen.png', titulos[1],'Proin totam minus dolores porro natus temporibus obcaecati dolor, omnis atque reprehenderit modi? Corporis, esse nam.') 
+      +caja('imagen.png', titulos[2],'Proin totam minus dolores porro natus temporibus obcaecati dolor, omnis atque reprehenderit modi? Corporis, esse nam.') 
+      +caja('imagen.png', titulos[2],'Proin totam minus dolores porro natus temporibus obcaecati dolor, omnis atque reprehenderit modi? Corporis, esse nam.') 
