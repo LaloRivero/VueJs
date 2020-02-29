@@ -1,3 +1,18 @@
+h1 {
+  font-size: 30px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 25px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,6 +20,7 @@
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
+  background-color: #333333;
 }
 
 main {
@@ -14,10 +30,10 @@ main {
 }
 
 .perfil {
-  width: 50%;
+  width: 55%;
   padding-top: 50px;
-  color: #FFFFFF;
-  background-color: #8841DA;
+  color: #8841DA;
+  background-color: #eeeeee;
 }
 .perfil__avatar {
   display: block;
@@ -25,32 +41,32 @@ main {
   border-radius: 50em;
 }
 .perfil__nombre, .perfil__minibio h2 {
-  text-transform: uppercase;
   text-align: center;
   font-size: 20px;
   font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
 }
 .perfil__titulo, .perfil__minibio h3 {
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(63, 87, 154, 0.8);
 }
 .perfil__boton {
   display: block;
   width: 100px;
   height: 40px;
   margin: 15px auto;
-  padding-top: 15px;
+  padding-top: 5px;
   border-radius: 20px;
   text-decoration: none;
-  text-transform: uppercase;
   text-align: center;
   font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
-  background-color: rgba(51, 51, 51, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(51, 51, 51, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
 .perfil__minibio {
@@ -143,4 +159,32 @@ main {
 }
 .galeria img {
   border-radius: 10px;
+}
+
+.articulos {
+  width: 45%;
+  padding: 50px 0 0 50px;
+}
+
+.articulo {
+  margin-bottom: 75px;
+  border-bottom: 3px solid #8841DA;
+}
+.articulo__categoria {
+  font-weight: 500;
+  font-size: 16px;
+  color: #8841DA;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+.articulo__titulo {
+  font-size: 20px;
+  color: #FFFFFF;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+.articulo__descripcion {
+  color: #FFFFFF;
+  margin-bottom: 30px;
+  padding-right: 100px;
 }
