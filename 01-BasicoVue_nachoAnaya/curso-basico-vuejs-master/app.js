@@ -3,6 +3,7 @@ var app = new Vue({
   data(){
     return{
       name:'Bitcoin',
+      symbol: 'BTC',
       img:'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
       changePercent:10,
       prices: [8400,7900,8200,9000,9400,8700,8374],
@@ -16,8 +17,25 @@ var app = new Vue({
         {day:"Sunday", value: 10400},
       ],
       showPrices : false,
-      price : 9000,
+      price : 8544,
       color: 'f1f1f1',
+      value: 0,
+    }
+  },
+  computed:{
+    title () {
+      return `${this.name} - ${this.symbol}`;
+    },
+    convertedValue(){
+      if(!this.value){
+        return 0;
+      }
+      return this.value / this.price; 
+    }
+  },
+  watch:{
+    showPrices(newVal,oldVal){
+      console.log(newVal,oldVal);
     }
   },
   methods:{

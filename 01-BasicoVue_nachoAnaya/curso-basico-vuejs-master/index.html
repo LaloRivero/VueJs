@@ -12,7 +12,7 @@
     <img v-on:mouseover = "toggleShowPrices" 
     @mouseout = "toggleShowPrices" 
     :src="img" :alt="name">
-    <h1 :class = "changePercent > 0 ? 'green' : 'red'"> {{ name }} 
+    <h1 :class = "changePercent > 0 ? 'green' : 'red'"> {{ title }} 
       <!-- el v-if crea o borra el elemento -->
       <span v-if="changePercent > 0">cool <br> </span>
       <span v-else-if="changePercent < 0">not cool<br></span>
@@ -23,6 +23,8 @@
       <span v-show="changePercent === 0">luky<br></span> -->
       <span @click="toggleShowPrices">{{showPrices ? '🙊':'🙈' }}</span>
     </h1>
+    <input type="number" v-model="value">
+    <span :style = "showPrices ? 'color: white':'color:black'">{{convertedValue}}</span>
 <!--     <ul>
       <li v-for="(price,i) in prices" :key="price"> {{ i }} - {{ price }} </li>
     </ul> -->
