@@ -16,10 +16,17 @@
       <span v-else-if="changePercent < 0">not cool<br></span>
       <span v-else>luky<br></span>
       <!-- el v-show modifica el atributo display y muestra o no un elemento -->
-      <span v-show="changePercent > 0">cool <br></span>
+     <!--  <span v-show="changePercent > 0">cool <br></span>
       <span v-show="changePercent < 0">not cool<br></span>
-      <span v-show="changePercent === 0">luky<br></span>
+      <span v-show="changePercent === 0">luky<br></span> -->
     </h1>
+    <ul>
+      <li v-for="(price,i) in prices" :key="price"> {{ i }} - {{ price }} </li>
+    </ul>
+    <ul>
+      <li v-for="(price,i) in pricesWithDays" :key="price.day"> 
+        {{ i }} - {{ price.day }} -- {{ price.value }} </li>
+    </ul>
       
 
   </div>
