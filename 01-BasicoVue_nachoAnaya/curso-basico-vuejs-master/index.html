@@ -9,8 +9,10 @@
 </head>
 <body>
   <div id="app" >
-    <img :src="img" :alt="name">
-    <h1> {{ name }} 
+    <img v-on:mouseover = "toggleShowPrices" 
+    @mouseout = "toggleShowPrices" 
+    :src="img" :alt="name">
+    <h1 :class = "changePercent > 0 ? 'green' : 'red'"> {{ name }} 
       <!-- el v-if crea o borra el elemento -->
       <span v-if="changePercent > 0">cool <br> </span>
       <span v-else-if="changePercent < 0">not cool<br></span>
@@ -19,13 +21,17 @@
      <!--  <span v-show="changePercent > 0">cool <br></span>
       <span v-show="changePercent < 0">not cool<br></span>
       <span v-show="changePercent === 0">luky<br></span> -->
+      <span @click="toggleShowPrices">{{showPrices ? '🙊':'🙈' }}</span>
     </h1>
-    <ul>
+<!--     <ul>
       <li v-for="(price,i) in prices" :key="price"> {{ i }} - {{ price }} </li>
-    </ul>
-    <ul>
-      <li v-for="(price,i) in pricesWithDays" :key="price.day"> 
-        {{ i }} - {{ price.day }} -- {{ price.value }} </li>
+    </ul> -->
+    <ul v-show=showPrices>
+      <li 
+      class="uppercase"
+      :class = "{ orange : price === p.value , red : price > p.value, green : price < p.value}"
+      v-for="(p,i) in pricesWithDays" :key="p.day"> 
+        {{ i }} - {{ p.day }} -- {{ p.value }} </li>
     </ul>
       
 
