@@ -17,11 +17,13 @@ var app = new Vue({
       ],
       showPrices : false,
       price : 9000,
+      color: 'f1f1f1',
     }
   },
   methods:{
     toggleShowPrices(){
       this.showPrices = !this.showPrices;
+      this.color = this.color.split('').reverse('').join('');
     }
   }
 })
