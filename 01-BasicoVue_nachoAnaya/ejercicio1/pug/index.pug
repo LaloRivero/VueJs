@@ -8,17 +8,18 @@ html(lang="en")
   body
     #app 
       .content
-        h1 Mi Cursos de Platzi 💚 
-        input(type="text" placeholder= "Titulo del curso")
-        input(type="number" placeholder= "Horas")
-        button(type='submit') Guardar Curso
-        div
+        .leftContent
+          h1 Mi Cursos de Platzi 💚 
+          input(type="text" placeholder= "Titulo del curso")
+          input(type="number" placeholder= "Horas")
+          button(type='submit') Guardar Curso
+        .rightContent
           h3 Lista de Cursos
           p(class = "red") Aun no has tomado cursos
           p Llevo
-            strong {{ Total time }}
-            horas aprendiendo en Platzi.
+            strong {{ Total_time }}
+            horas aprendiendo en Platzi. 
             b #NuncaParesDeAprender 💚 
 
   script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
-  //script(src="../js/script.js")
+  script(src="../js/script.js")

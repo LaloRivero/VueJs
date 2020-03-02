@@ -9,20 +9,22 @@
   <body>
     <div id="app"> 
       <div class="content">
-        <h1>Mi Cursos de Platzi 💚 </h1>
-        <input type="text" placeholder="Titulo del curso"/>
-        <input type="number" placeholder="Horas"/>
-        <button type="submit">Guardar Curso</button>
-        <div>
+        <div class="leftContent">
+          <h1>Mi Cursos de Platzi 💚 </h1>
+          <input type="text" placeholder="Titulo del curso"/>
+          <input type="number" placeholder="Horas"/>
+          <button type="submit">Guardar Curso</button>
+        </div>
+        <div class="rightContent">
           <h3>Lista de Cursos</h3>
           <p class="red">Aun no has tomado cursos</p>
-          <p>Llevo<strong>{{ Total time }}</strong>
-            <horas>aprendiendo en Platzi.</horas><b>#NuncaParesDeAprender 💚 </b>
+          <p>Llevo<strong>{{ Total_time }}</strong>
+            <horas>aprendiendo en Platzi. </horas><b>#NuncaParesDeAprender 💚 </b>
           </p>
         </div>
       </div>
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <!--script(src="../js/script.js")-->
+  <script src="../js/script.js"></script>
 </html>
