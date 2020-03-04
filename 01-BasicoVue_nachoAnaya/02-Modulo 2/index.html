@@ -9,36 +9,16 @@
 </head>
 <body>
   <div id="app" :style = "{background : '#' + color}">
-    <img v-on:mouseover = "toggleShowPrices" 
-    @mouseout = "toggleShowPrices" 
-    :src="img" :alt="name">
-    <h1 :class = "changePercent > 0 ? 'green' : 'red'"> {{ title }} 
-      <!-- el v-if crea o borra el elemento -->
-      <span v-if="changePercent > 0">cool <br> </span>
-      <span v-else-if="changePercent < 0">not cool<br></span>
-      <span v-else>luky<br></span>
-      <!-- el v-show modifica el atributo display y muestra o no un elemento -->
-     <!--  <span v-show="changePercent > 0">cool <br></span>
-      <span v-show="changePercent < 0">not cool<br></span>
-      <span v-show="changePercent === 0">luky<br></span> -->
-      <span @click="toggleShowPrices">{{showPrices ? '🙊':'🙈' }}</span>
-    </h1>
-    <input type="number" v-model="value">
-    <span :style = "showPrices ? 'color: white':'color:black'">{{convertedValue}}</span>
-<!--     <ul>
-      <li v-for="(price,i) in prices" :key="price"> {{ i }} - {{ price }} </li>
-    </ul> -->
-    <ul v-show=showPrices>
-      <li 
-      class="uppercase"
-      :class = "{ orange : price === p.value , red : price > p.value, green : price < p.value}"
-      v-for="(p,i) in pricesWithDays" :key="p.day"> 
-        {{ i }} - {{ p.day }} -- {{ p.value }} </li>
-    </ul>
-      
-
+    <coin-detail @change-color="updateColor" :coin="btc">
+      <template v-slot:text>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ex unde odio velit ab suscipit architecto est ut nemo, soluta ea optio nobis, qui excepturi. Expedita suscipit ullam aspernatur fugiat!</p>
+      </template>
+      <template v-slot:link>
+        <!-- los slot nos permiten inyectarle contenido de un componente padre a un componente hijo -->
+        <a href="#">Link!</a> 
+      </template>
+    </coin-detail>
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="app.js"></script>
 </body>
