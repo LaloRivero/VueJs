@@ -8,6 +8,7 @@ html {
 }
 
 .content {
+  width: 70%;
   display: flex;
   border: 1px solid rgba(128, 128, 128, 0.6);
   background-color: #f1f3f4;
@@ -19,9 +20,10 @@ html {
 .leftContent {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 .leftContent input {
-  width: 300px;
+  max-width: 250px;
   height: 40px;
   margin-top: 20px;
   padding: 0 10px;
@@ -29,7 +31,7 @@ html {
   border-radius: 5px;
 }
 .leftContent button {
-  width: 180px;
+  max-width: 180px;
   height: 40px;
   margin-top: 20px;
   font-size: 16px;
@@ -39,6 +41,7 @@ html {
 .rightContent {
   padding: 40px;
   width: 40%;
+  width: 50%;
 }
 
 .red {
