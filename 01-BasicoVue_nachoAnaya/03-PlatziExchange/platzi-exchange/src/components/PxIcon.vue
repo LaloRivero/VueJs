@@ -454,8 +454,3 @@ MDA6MDU6MTYrMDM6MDAprfd5AAAAAElFTkSuQmCC"
     />
   </svg>
 </template>
-<script>
-export default {
-  name: "PxIcon"
-};
-</script>
