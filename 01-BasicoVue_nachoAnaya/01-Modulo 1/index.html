@@ -1,45 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Curso Basico de Vue.js | Platzi</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <div id="app" :style = "{background : '#' + color}">
-    <img v-on:mouseover = "toggleShowPrices" 
-    @mouseout = "toggleShowPrices" 
-    :src="img" :alt="name">
-    <h1 :class = "changePercent > 0 ? 'green' : 'red'"> {{ title }} 
-      <!-- el v-if crea o borra el elemento -->
-      <span v-if="changePercent > 0">cool <br> </span>
-      <span v-else-if="changePercent < 0">not cool<br></span>
-      <span v-else>luky<br></span>
-      <!-- el v-show modifica el atributo display y muestra o no un elemento -->
-     <!--  <span v-show="changePercent > 0">cool <br></span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Curso Basico de Vue.js | Platzi</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app" :style="{background : '#' + color}">
+      <img
+        v-on:mouseover="toggleShowPrices"
+        @mouseout="toggleShowPrices"
+        :src="img"
+        :alt="name"
+      />
+      <h1 :class="changePercent > 0 ? 'green' : 'red'">
+        {{ title }}
+        <!-- el v-if crea o borra el elemento -->
+        <span v-if="changePercent > 0">cool <br /> </span>
+        <span v-else-if="changePercent < 0">not cool<br /></span>
+        <span v-else>luky<br /></span>
+        <!-- el v-show modifica el atributo display y muestra o no un elemento -->
+        <!--  <span v-show="changePercent > 0">cool <br></span>
       <span v-show="changePercent < 0">not cool<br></span>
       <span v-show="changePercent === 0">luky<br></span> -->
-      <span @click="toggleShowPrices">{{showPrices ? '🙊':'🙈' }}</span>
-    </h1>
-    <input type="number" v-model="value">
-    <span :style = "showPrices ? 'color: white':'color:black'">{{convertedValue}}</span>
-<!--     <ul>
+        <span @click="toggleShowPrices">{{showPrices ? '🙊':'🙈' }}</span>
+      </h1>
+      <input type="number" v-model="value" />
+      <span :style="showPrices ? 'color: white':'color:black'"
+        >{{convertedValue}}</span
+      >
+      <!--     <ul>
       <li v-for="(price,i) in prices" :key="price"> {{ i }} - {{ price }} </li>
     </ul> -->
-    <ul v-show=showPrices>
-      <li 
-      class="uppercase"
-      :class = "{ orange : price === p.value , red : price > p.value, green : price < p.value}"
-      v-for="(p,i) in pricesWithDays" :key="p.day"> 
-        {{ i }} - {{ p.day }} -- {{ p.value }} </li>
-    </ul>
-      
+      <ul v-show="showPrices">
+        <li
+          class="uppercase"
+          :class="{ orange : price === p.value , red : price > p.value, green : price < p.value}"
+          v-for="(p,i) in pricesWithDays"
+          :key="p.day"
+        >
+          {{ i }} - {{ p.day }} -- {{ p.value }}
+        </li>
+      </ul>
+    </div>
 
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="app.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
