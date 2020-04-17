@@ -1,8 +1,0 @@
-{
-  "extends":["vue","standard"] ,
-  "rules": {
-    "no-new":0
-  },
-  "parser": "babel-eslint",
-  "plugins": ["html", "vue"]
-}
