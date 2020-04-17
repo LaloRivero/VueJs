@@ -84,7 +84,7 @@ export default {
       filter: '',
       sortOrder: 1
     }
-  },
+  }, 
   components: {
     PxButton
   },
