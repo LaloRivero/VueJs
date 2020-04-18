@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter from 'vue.router'
+import VueRouter from 'vue-router'
 import App from './App.vue'
 import EventBus from './components/plugins/event-bus.js'
 import routes from './routes'
