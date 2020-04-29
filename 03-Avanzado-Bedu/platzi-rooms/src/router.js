@@ -1,14 +1,15 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import HomePage from './views/HomePage.vue';
-import SearchPage from './views/SearchPage.vue';
-import NotFoundPage from './views/NotFoundPage.vue';
+import Vue from 'vue'
+import Router from 'vue-router'
+import HomePage from './views/HomePage.vue'
+import SearchPage from './views/SearchPage.vue'
+import NotFoundPage from './views/NotFoundPage.vue'
+import CreateHousePage from './views/user/createHousePage.vue'
 
 // User Pages
-import ProfilePage from './views/user/ProfilePage.vue';
-import HousesPages from './views/user/HousesPage.vue';
+import ProfilePage from './views/user/ProfilePage.vue'
+import HousesPages from './views/user/HousesPage.vue'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   mode: 'history',
@@ -39,9 +40,18 @@ export default new Router({
       component: HousesPages,
     },
     {
+      path: '/house',
+      redirect: { name: 'ProfilePage' },
+    },
+    {
+      path: '/house/new',
+      name: 'CreateHousePage',
+      component: CreateHousePage,
+    },
+    {
       path: '*',
       name: 'NotFoundPage',
       component: NotFoundPage,
     },
   ],
-});
+})
