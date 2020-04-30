@@ -34,8 +34,8 @@
     <footer-partial></footer-partial>
     <!-- Modals -->
     <modal :show="modals.login" @close-modal="closeModal">
-      <h2 class="text-grey-darkest font-semibold text-center mb-6">Welcome to Platzi rooms</h2>
-      <form action>
+      <h2 class="text-grey-darkest font-semibold text-center mb-6">Welcome to Platzi Rooms</h2>
+      <form @submit.prevent="loginHandlerSubmit">
         <div class="mb-4">
           <label class="input__label">Email</label>
           <div class="form__field relative">
@@ -43,12 +43,12 @@
               v-model="formLogin.email"
               class="input__field"
               type="text"
-              placeholder="name@email.com"
+              placeholder="bruce.wayne@imnotbatman.org"
             />
           </div>
         </div>
         <div class="mb-4">
-          <label for class="input__label">Password</label>
+          <label class="input__label">Password</label>
           <div class="form__field relative">
             <input
               v-model="formLogin.password"
@@ -59,11 +59,53 @@
           </div>
         </div>
         <div class="mb-4">
-          <toggle-input v-model="formLogin.rememberMe"></toggle-input>
-          <label>Remember Me</label>
+          <toggle-input v-model="formLogin.rememberMe"></toggle-input>Remember Me
         </div>
         <div class="mb-4">
           <button class="btn btn-primary mr-3 w-full">Login</button>
+        </div>
+      </form>
+    </modal>
+    <modal :show="modals.register" @close-modal="closeModalRegister">
+      <form class="form" @submit.prevent="registerHandlerSubmit">
+        <div class="mb-4">
+          <label class="input__label" for="email">Email</label>
+          <div class="form__field relative">
+            <input
+              class="input__field"
+              id="email"
+              v-model="formRegister.email"
+              type="email"
+              placeholder="bruce.wayne@imnotbatman.org"
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="input__label" for="email">Name</label>
+          <div class="form__field relative">
+            <input
+              class="input__field"
+              id="name"
+              v-model="formRegister.name"
+              type="text"
+              placeholder="Bruce Wayne"
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="input__label" for="password">Password</label>
+          <div class="form__field relative">
+            <input
+              class="input__field"
+              id="password"
+              v-model="formRegister.password"
+              type="password"
+              placeholder="Create a Password"
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <button class="btn w-full">Create account</button>
         </div>
       </form>
     </modal>
@@ -79,23 +121,28 @@ import ToggleInput from '@/components/ToggleInput.vue'
 
 export default {
   name: 'DefaultLayout',
-  components: {
-    HeaderPartial,
-    FooterPartial,
-    Modal,
-    ToggleInput
-  },
-  data(){
-    return{
-      formLogin:{
+  data() {
+    return {
+      formLogin: {
         email: '',
-        password:'',
-        rememberMe: false
-      }
+        password: '',
+        rememberMe: false,
+      },
+      formRegister: {
+        email: '',
+        name: '',
+        password: '',
+      },
     }
   },
   computed: {
     ...mapGetters(['modals']),
+  },
+  components: {
+    HeaderPartial,
+    FooterPartial,
+    Modal,
+    ToggleInput,
   },
   methods: {
     closeModal() {
@@ -103,6 +150,27 @@ export default {
         name: 'login',
         value: false,
       })
+    },
+    closeModalRegister() {
+      this.$store.dispatch('TOGGLE_MODAL_STATE', {
+        name: 'register',
+        value: false,
+      })
+    },
+    registerHandlerSubmit() {
+      this.$store.dispatch('CREATE_USER', this.formRegister).then(() => {
+        this.closeModalRegister()
+      })
+    },
+    loginHandlerSubmit() {
+      this.$store
+        .dispatch('SIGN_IN', {
+          email: this.formLogin.email,
+          password: this.formLogin.password,
+        })
+        .then(() => {
+          this.closeModal()
+        })
     },
   },
 }

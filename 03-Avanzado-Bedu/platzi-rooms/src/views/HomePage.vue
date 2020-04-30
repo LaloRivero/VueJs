@@ -32,10 +32,10 @@
         </div>
       </div>
       <div class="text-center">
-        <a
+        <router-link
           class="py-3 px-12 bg-yellow-dark no-underline text-yellow-darker text-lg rounded"
-          href="#"
-          >Show all</a
+          :to="{ name: 'SearchPage' }"
+          >Show all</router-link
         >
       </div>
     </section>
@@ -49,6 +49,9 @@ import TinySlider from '@/components/tinySlider.vue'
 
 export default {
   name: 'HomePage',
+  beforeCreate() {
+    this.$store.dispatch('FETCH_ROOMS', 12)
+  },
   components: {
     DefaultLayout,
     TinySlider,

@@ -28,6 +28,7 @@ export default {
   },
 }
 </script>
+
 <style scoped>
 .modal {
   min-width: 350px;
